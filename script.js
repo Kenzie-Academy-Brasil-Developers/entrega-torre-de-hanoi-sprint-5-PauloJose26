@@ -8,6 +8,7 @@ const body = document.body;
 const main = document.querySelector('main');
 let discoSelecionado;
 main.addEventListener('click', (event) => {
+
     event.path;
 
     let select = document.getElementById('start')
@@ -62,12 +63,11 @@ function swap(container) {
 
 }
 
-
-
 function start() {
     const spansMain = document.getElementsByClassName('container');
     for (let i of spansMain) {
         const Torre = document.createElement('span');
+
         console.log(spansMain)
         i.appendChild(Torre);
     }
@@ -80,6 +80,7 @@ function start() {
         start.appendChild(div)
         div.style.width = size[i]
         div.classList.add('disco')
+
 
     }
 }
