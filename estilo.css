@@ -1,7 +1,58 @@
+body, main, div, span{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /* PAULO jOSÉ */
+main{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+} 
+.container{
+    width: 100%;
+    height: 180px;
+    margin: 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+.container span{
+    position: absolute;
+    background-color: black;
+    padding: 10px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
 
-
-
+.container div{
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 1;
+}
+.container .quarto{
+    background-color: red;
+    width: 100%;
+}
+.container .terceiro{
+    background-color: green;
+    width: 80%;
+}
+.container .segundo{
+    background-color: purple;
+    width: 60%;
+}
+.container .primeiro{
+    background-color: lightblue;
+    width: 40%;
+}
 
 /* FERNÃO SHIOTSUKI */
 
