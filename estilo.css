@@ -1,7 +1,9 @@
 body, main, div, span, p, h1, section{
     padding: 0;
     margin: 0;
+    border: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 /* PAULO jOSÉ */
 header{
@@ -20,7 +22,6 @@ header button{
     border-radius: 5px;
     cursor: pointer;
 }
-
 
 
 
@@ -108,13 +109,25 @@ header button{
 main{
     width: 100%;
     padding: 40px;
-    display: flex;
     position: relative;
     flex-direction: column;
-} 
+    overflow: auto;
+    height: 90vh;
+}
+main::-webkit-scrollbar{
+    display: none;
+}
+main h2{
+    margin: 10px 0;
+    font-size: 22px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 112);
+    text-transform: uppercase;
+}
 .container{
     width: 100%;
-    height: 180px;
+    height: 120px;
     margin: 10px 0;
     position: relative;
     display: flex;
@@ -132,11 +145,11 @@ main{
     z-index: 0;
 }
 .container .disco{
-    height: 35px;
+    height: 20px;
     border: 1px solid black;
     border-radius: 10px;
     z-index: 1;
-
+    margin: 0;
 }
 .container #quinto{
     background-color: red;
