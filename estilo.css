@@ -17,6 +17,7 @@ main{
     position: relative;
     display: flex;
     flex-direction: column-reverse;
+    justify-content: flex-start;
     align-items: center;
 }
 .container span{
@@ -30,7 +31,7 @@ main{
     z-index: 0;
 }
 
-.container .disco{
+.container div{
     height: 35px;
     border: 1px solid black;
     border-radius: 10px;
@@ -38,7 +39,6 @@ main{
 }
 .container #quarto{
     background-color: red;
-    justify-self: center;
     width: 100%;
 }
 .container #terceiro{
@@ -54,12 +54,51 @@ main{
     width: 40%;
 }
 
-.disco--foco{
-   top: 0;
-   position: absolute;
-}
+
+
 /* FERNÃO SHIOTSUKI */
 
+@media screen and (min-width: 768px){
 
+    html{
+        height: 100%;
+    }
+
+    body{
+        height: 95%;
+        display: flex;
+    }
+
+    
+    
+    main{
+
+        align-items: flex-end;
+        flex-direction: row;
+        display: flex;
+        padding: 0;
+    }
+
+    .container{
+        height: 270px;
+
+    }
+
+    .container #primeiro{
+       height: 14%;
+    }
+
+    .container #segundo{
+        height: 14%;
+    }
+
+    .container #terceiro{
+        height: 14%;
+    }
+
+    .container #quarto{
+        height: 14%;
+    }
+}
 
 
