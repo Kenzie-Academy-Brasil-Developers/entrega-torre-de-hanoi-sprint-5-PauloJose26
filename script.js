@@ -3,6 +3,22 @@ const buttonReset = document.querySelector("#reset");
 let CONTADOR;
 
 
+document.querySelector(".section--victory button").addEventListener("click", () => {
+    resetGame();
+    document.querySelector(".section--victory").classList.add("displey--none");
+});
+
+function conditionVictory(){
+    const divEnd = document.querySelector("#end");
+    let countChild = divEnd.childElementCount;
+    if(countChild === 5){
+        const sectionVictory = document.querySelector(".section--victory");
+        sectionVictory.classList.remove("displey--none");
+        const pMovements = document.querySelector(".section--victory p");
+        pMovements.textContent = `Número de Movimentos: ${CONTADOR}`;
+    }
+}
+
 buttonReset.addEventListener("click", resetGame);
 function resetGame(){
     CONTADOR = undefined;
@@ -89,6 +105,7 @@ function swap(container) {
 
     discoSelecionado.classList.remove("disco--foco");
     discoSelecionado = undefined;
+    conditionVictory();
 }
 
 function start() {

@@ -1,4 +1,4 @@
-body, main, div, span, p{
+body, main, div, span, p, h1, section{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -13,12 +13,64 @@ header{
 header button{
     padding: 10px 20px;
     font-size: 17px;
-    background-color: rgb(0, 0, 131);
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 90);
     color: white;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
 }
+
+.section--victory{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 2;
+}
+.section--victory div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 50, 0);
+    width: 80%;
+    margin-top: 50px;
+    border-radius: 15px;
+    align-items: center;
+}
+.section--victory h1{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: white;
+}
+.section--victory p{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.section--victory button{
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.displey--none{
+    display: none;
+}
+
+
 
 
 main{
@@ -47,7 +99,6 @@ main{
     transform: translateX(-50%);
     z-index: 0;
 }
-
 .container .disco{
     height: 35px;
     border: 1px solid black;
