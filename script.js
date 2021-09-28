@@ -58,12 +58,21 @@ function resetGame(){
     }
     discoSelecionado = undefined;
 
+
+/* FERNÃO SHIOTSUKI */
+const body = document.body;
+const main = document.querySelector('main');
+let discoSelecionado;
+main.addEventListener('click', (event) => {
+    event.path;
+/* PAULO jOSÉ */
     const divContainer = document.querySelectorAll(".container");
     for(let div in divContainer){
         divContainer[div].textContent = "";
     }
     start();
 }
+
 
 
 /*    CONTA OS MOVIMENTOS DO JOGADOR    */
@@ -97,7 +106,11 @@ function selectDisk(container){
             discoSelecionado = undefined;
         }
     }
+
+ 
+
 }
+
 
 
 
@@ -146,16 +159,37 @@ function swap(container) {
         }
     }
 
+
+
+    discoSelecionado = undefined
+
     discoSelecionado.classList.remove("disco--foco");
     discoSelecionado = undefined;
     conditionVictory();
+
 }
+
+
 
 function start() {
     counterMovement();
     const spansMain = document.getElementsByClassName('container');
     for (let i of spansMain) {
         const Torre = document.createElement('span');
+
+        console.log(spansMain)
+        i.appendChild(Torre);
+    }
+    const start = document.getElementById('start');
+    let list = ['quarto', 'terceiro', 'segundo', 'primeiro'];
+    let size = ['100%', '80%', '60%', '40%']
+    for (let i = 0; i < 4; i++) {
+        const div = document.createElement('div');
+        div.id = list[i]
+        start.appendChild(div)
+        div.style.width = size[i]
+        div.classList.add('disco')
+
         i.appendChild(Torre);
     }
 
@@ -170,6 +204,7 @@ function start() {
         case "difficult":
             numDisk = 5;
         break;
+
     }
 
     const start = document.getElementById('start');

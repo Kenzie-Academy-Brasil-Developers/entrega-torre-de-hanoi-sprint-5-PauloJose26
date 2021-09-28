@@ -132,6 +132,7 @@ main h2{
     position: relative;
     display: flex;
     flex-direction: column-reverse;
+    justify-content: flex-start;
     align-items: center;
 }
 .container span{
@@ -144,8 +145,14 @@ main h2{
     transform: translateX(-50%);
     z-index: 0;
 }
+
+
+.container div{
+    height: 35px;
+
 .container .disco{
     height: 20px;
+
     border: 1px solid black;
     border-radius: 10px;
     z-index: 1;
@@ -153,6 +160,10 @@ main h2{
 }
 .container #quinto{
     background-color: red;
+
+    width: 100%;
+
+
 }
 .container #quarto{
     background-color: green;
@@ -166,6 +177,7 @@ main h2{
 .container #primeiro{
     background-color: gray;
 }
+
 
 .disco--foco{
    top: 0;
@@ -181,8 +193,50 @@ main h2{
 }
 
 
+
 /* FERNÃO SHIOTSUKI */
 
+@media screen and (min-width: 768px){
 
+    html{
+        height: 100%;
+    }
+
+    body{
+        height: 95%;
+        display: flex;
+    }
+
+    
+    
+    main{
+
+        align-items: flex-end;
+        flex-direction: row;
+        display: flex;
+        padding: 0;
+    }
+
+    .container{
+        height: 270px;
+
+    }
+
+    .container #primeiro{
+       height: 14%;
+    }
+
+    .container #segundo{
+        height: 14%;
+    }
+
+    .container #terceiro{
+        height: 14%;
+    }
+
+    .container #quarto{
+        height: 14%;
+    }
+}
 
 
