@@ -21,7 +21,11 @@ header button{
     cursor: pointer;
 }
 
-.section--victory{
+
+
+
+
+.section--victory, .section--start{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -42,7 +46,7 @@ header button{
     border-radius: 15px;
     align-items: center;
 }
-.section--victory h1{
+.section--victory h1, .section--start h1{
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
@@ -68,6 +72,34 @@ header button{
 }
 .displey--none{
     display: none;
+}
+.section--start{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+}
+.section--start h1{
+    margin: 40px 0;
+    font-size: 30px;
+    color: black;
+}
+.section--start div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section--start button{
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-size: 25px;
+    text-transform: uppercase;
+    background-color: rgb(0, 0, 90);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -104,19 +136,22 @@ main{
     border: 1px solid black;
     border-radius: 10px;
     z-index: 1;
+
+}
+.container #quinto{
+    background-color: red;
 }
 .container #quarto{
-    background-color: red;
-    justify-self: center;
-}
-.container #terceiro{
     background-color: green;
 }
-.container #segundo{
+.container #terceiro{
     background-color: purple;
 }
-.container #primeiro{
+.container #segundo{
     background-color: lightblue;
+}
+.container #primeiro{
+    background-color: gray;
 }
 
 .disco--foco{

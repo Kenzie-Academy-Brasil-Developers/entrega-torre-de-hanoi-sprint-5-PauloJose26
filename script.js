@@ -1,17 +1,46 @@
 /* PAULO jOSÉ */
 const buttonReset = document.querySelector("#reset");
+const sectionStart = document.querySelector(".section--start");
 let CONTADOR;
+let DIFFICULTYS;
+
+/*  SELEÇÃO DE DIFICULDADE E INICIAR O JOGO  NA TELA START */
+sectionStart.querySelector("div").addEventListener("click", (event) => {
+    if(event.target.tagName === "BUTTON"){
+        DIFFICULTYS = event.target.id;
+        sectionStart.classList.add("displey--none");
+        resetGame();
+    }
+});
 
 
+/*  AÇÃO DO BUTTON DO DISPLAY DE VITÓRIA PARA REINICIAR O JOGO  */
 document.querySelector(".section--victory button").addEventListener("click", () => {
     resetGame();
     document.querySelector(".section--victory").classList.add("displey--none");
+    sectionStart.classList.remove("displey--none");
 });
 
+
+/*    VERIFICA SE O JOGADOR VENCEU O JOGO    */
 function conditionVictory(){
     const divEnd = document.querySelector("#end");
     let countChild = divEnd.childElementCount;
-    if(countChild === 5){
+    let condition;
+
+    switch(DIFFICULTYS){
+        case "easy":
+            condition = (countChild === 4);
+        break;
+        case "normal":
+            condition = (countChild === 5);
+        break;
+        case "difficult":
+            condition = (countChild === 6);
+        break;
+    }
+
+    if(condition){
         const sectionVictory = document.querySelector(".section--victory");
         sectionVictory.classList.remove("displey--none");
         const pMovements = document.querySelector(".section--victory p");
@@ -19,6 +48,8 @@ function conditionVictory(){
     }
 }
 
+
+/*    BUTTON QUE RESETA OS MOVIMENTOS     */
 buttonReset.addEventListener("click", resetGame);
 function resetGame(){
     CONTADOR = undefined;
@@ -27,10 +58,11 @@ function resetGame(){
     for(let div in divContainer){
         divContainer[div].textContent = "";
     }
-
     start();
 }
 
+
+/*    CONTA OS MOVIMENTOS DO JOGADOR    */
 function counterMovement(){
     let elementTag = document.querySelector(".contador");
     if(CONTADOR === undefined){
@@ -43,6 +75,7 @@ function counterMovement(){
 }
 
 
+/*   SELECIONA O DISCO QUE O JOGADOR QUE MOVER, O MOVIMENTO SÓ ACONTECE SE JÁ TIVER UM DISCO SELECIONADO   */
 function selectDisk(container){
     let childElement = container.lastElementChild;
     if(discoSelecionado === undefined){
@@ -61,6 +94,12 @@ function selectDisk(container){
         }
     }
 }
+
+
+
+
+
+
 
 
 
@@ -116,11 +155,24 @@ function start() {
         i.appendChild(Torre);
     }
 
-    const start = document.getElementById('start');
-    let list = ['quarto', 'terceiro', 'segundo', 'primeiro'];
-    let size = ['100%', '80%', '60%', '40%'];
+    let numDisk;
+    switch(DIFFICULTYS){
+        case "easy":
+            numDisk = 3;
+        break;
+        case "normal":
+            numDisk = 4;
+        break;
+        case "difficult":
+            numDisk = 5;
+        break;
+    }
 
-    for (let i = 0; i < 4; i++) {
+    const start = document.getElementById('start');
+    let list = ['quinto' ,'quarto', 'terceiro', 'segundo', 'primeiro'];
+    let size = ['100%', '80%', '60%', '40%', '20%'];
+
+    for (let i = 0; i < numDisk; i++) {
         const div = document.createElement('div');
         div.id = list[i];
         div.style.width = size[i];
@@ -129,5 +181,3 @@ function start() {
         start.appendChild(div);
     }
 }
-
-start();
