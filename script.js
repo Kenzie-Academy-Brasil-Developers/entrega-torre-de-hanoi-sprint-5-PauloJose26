@@ -53,8 +53,10 @@ function conditionVictory(){
 buttonReset.addEventListener("click", resetGame);
 function resetGame(){
     CONTADOR = undefined;
+    if(discoSelecionado !== undefined){
+        discoSelecionado.classList.remove("disco--foco");
+    }
     discoSelecionado = undefined;
-    discoSelecionado.classList.remove("disco--foco");
 
     const divContainer = document.querySelectorAll(".container");
     for(let div in divContainer){
