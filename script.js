@@ -58,22 +58,12 @@ function resetGame(){
     }
     discoSelecionado = undefined;
 
-
-/* FERNÃO SHIOTSUKI */
-const body = document.body;
-const main = document.querySelector('main');
-let discoSelecionado;
-main.addEventListener('click', (event) => {
-    event.path;
-/* PAULO jOSÉ */
     const divContainer = document.querySelectorAll(".container");
     for(let div in divContainer){
         divContainer[div].textContent = "";
     }
     start();
 }
-
-
 
 /*    CONTA OS MOVIMENTOS DO JOGADOR    */
 function counterMovement(){
@@ -106,13 +96,7 @@ function selectDisk(container){
             discoSelecionado = undefined;
         }
     }
-
- 
-
 }
-
-
-
 
 
 
@@ -133,9 +117,6 @@ main.addEventListener('click', (event) => {
         selectDisk(event.path[1]);
     }
 });
-
-
-
 
 function swap(container) {
     let disco = container.lastElementChild;
@@ -159,14 +140,9 @@ function swap(container) {
         }
     }
 
-
-
-    discoSelecionado = undefined
-
     discoSelecionado.classList.remove("disco--foco");
     discoSelecionado = undefined;
     conditionVictory();
-
 }
 
 
@@ -176,23 +152,9 @@ function start() {
     const spansMain = document.getElementsByClassName('container');
     for (let i of spansMain) {
         const Torre = document.createElement('span');
-
-        console.log(spansMain)
         i.appendChild(Torre);
     }
-    const start = document.getElementById('start');
-    let list = ['quarto', 'terceiro', 'segundo', 'primeiro'];
-    let size = ['100%', '80%', '60%', '40%']
-    for (let i = 0; i < 4; i++) {
-        const div = document.createElement('div');
-        div.id = list[i]
-        start.appendChild(div)
-        div.style.width = size[i]
-        div.classList.add('disco')
-
-        i.appendChild(Torre);
-    }
-
+    
     let numDisk;
     switch(DIFFICULTYS){
         case "easy":
@@ -207,7 +169,7 @@ function start() {
 
     }
 
-    const start = document.getElementById('start');
+    const divStart = document.getElementById('start');
     let list = ['quinto' ,'quarto', 'terceiro', 'segundo', 'primeiro'];
     let size = ['100%', '80%', '60%', '40%', '20%'];
 
@@ -217,6 +179,6 @@ function start() {
         div.style.width = size[i];
         div.classList.add('disco');
 
-        start.appendChild(div);
+        divStart.appendChild(div);
     }
 }

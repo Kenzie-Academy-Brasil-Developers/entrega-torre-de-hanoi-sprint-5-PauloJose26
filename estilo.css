@@ -149,21 +149,19 @@ main h2{
 
 .container div{
     height: 35px;
+}
 
 .container .disco{
     height: 20px;
-
     border: 1px solid black;
     border-radius: 10px;
     z-index: 1;
     margin: 0;
 }
+
 .container #quinto{
     background-color: red;
-
     width: 100%;
-
-
 }
 .container #quarto{
     background-color: green;
@@ -191,51 +189,35 @@ main h2{
     padding: 20px;
     font-size: 18px;
 }
+@media screen and (min-width: 400px){
+    main{
+        width: 400px;
+        margin: 0 auto;
+    }
+}
 
 
 
 /* FERNÃO SHIOTSUKI */
 
-@media screen and (min-width: 768px){
-
-    html{
-        height: 100%;
-    }
-
-    body{
-        height: 95%;
-        display: flex;
-    }
-
-    
-    
+@media screen and (min-width: 800px){
     main{
-
-        align-items: flex-end;
-        flex-direction: row;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         padding: 0;
+        margin: 0 auto;
+        width: 800px;
     }
-
+    main section{
+        width: 32%;
+    }
     .container{
-        height: 270px;
-
+        height: 160px;
     }
-
-    .container #primeiro{
-       height: 14%;
-    }
-
-    .container #segundo{
-        height: 14%;
-    }
-
-    .container #terceiro{
-        height: 14%;
-    }
-
-    .container #quarto{
-        height: 14%;
+    .container .disco{
+        height: 30px;
     }
 }
 
