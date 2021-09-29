@@ -9,7 +9,7 @@ sectionStart.querySelector("div").addEventListener("click", (event) => {
     if(event.target.tagName === "BUTTON"){
         DIFFICULTYS = event.target.id;
         sectionStart.classList.add("displey--none");
-        resetGame();
+        start();
     }
 });
 
@@ -50,7 +50,10 @@ function conditionVictory(){
 
 
 /*    BUTTON QUE RESETA OS MOVIMENTOS     */
-buttonReset.addEventListener("click", resetGame);
+buttonReset.addEventListener("click", () => {
+    resetGame();
+    start();
+});
 function resetGame(){
     CONTADOR = undefined;
     if(discoSelecionado !== undefined){
@@ -62,7 +65,6 @@ function resetGame(){
     for(let div in divContainer){
         divContainer[div].textContent = "";
     }
-    start();
 }
 
 /*    CONTA OS MOVIMENTOS DO JOGADOR    */
